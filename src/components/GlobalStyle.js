@@ -1,7 +1,14 @@
-@import-normalize; /* bring in normalize.css styles */
+import { createGlobalStyle } from 'styled-components';
+import 'modern-normalize';
+import back from '../image/back.jpg';
 
-body {
-  margin-top: 50px;
+export const GlobalStyle = createGlobalStyle`
+body { 
+  margin: 0;;
+  background: url(${back}) no-repeat;
+  background-size: cover;
+  display: grid;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,6 +21,10 @@ code {
     monospace;
 }
 
+h1,h2,h3,h4,h4,h5{
+  margin: 0;
+}
+
 ul,
 ol {
   padding: 0;
@@ -24,17 +35,12 @@ li {
   list-style: none;
 }
 
+p{
+  margin: 0;
+  color:#fff;
+}
+
 button {
   cursor: pointer;
 }
-
-p {
-  margin: 0;
-  color: #fff;
-}
-
-h1,
-h2,
-h3 {
-  color: #fff;
-}
+`;

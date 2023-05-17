@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { setFilterContacts } from 'redux/filterSlice';
-import './Filter.css';
+import { setFilterContacts } from 'redux/contacts/filterSlice';
+import './Filter.styled.js';
+import { Container, FilterInput, Title } from './Filter.styled.js';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -11,10 +12,14 @@ export const Filter = () => {
   };
 
   return (
-    <label>
-      <p>Find contacts by name</p>
-      <input type="text" name="filter" onChange={getVisibleContacts}></input>
-    </label>
+    <Container>
+      <Title>Find contacts by name</Title>
+      <FilterInput
+        type="text"
+        name="filter"
+        onChange={getVisibleContacts}
+      ></FilterInput>
+    </Container>
   );
 };
 

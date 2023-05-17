@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-import '../ContactItem/ContactItem.css';
+import './ContactItem.style.js';
 
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import toast from 'react-hot-toast';
+import { Contact, ContactBtn } from './ContactItem.style.js';
 
-export const ContactItem = ({ name, phone, id }) => {
+export const ContactItem = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
@@ -14,14 +15,14 @@ export const ContactItem = ({ name, phone, id }) => {
   };
 
   return (
-    <li className="contact-item">
+    <Contact>
       <p>
-        {name}: {phone}
+        {name}: {number}
       </p>
-      <button className="item-btn" type="button" onClick={handleDelete}>
+      <ContactBtn type="button" onClick={handleDelete}>
         Delete
-      </button>
-    </li>
+      </ContactBtn>
+    </Contact>
   );
 };
 
